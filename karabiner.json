@@ -75,37 +75,18 @@
                         
                     },
                     {
-                        "description": "Razer M1–M5 actions (BlackWidow Chroma)",
+                        "description": "Normalize ⌥⌘N on Razer (always send clean Option+Command+N)",
                         "manipulators": [
                             {
                             "type": "basic",
-                            "from": { "key_code": "f13" },   
-                            "to": [ { "key_code": "mission_control" } ],
-                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            "from": {
+                                "key_code": "n",
+                                "modifiers": { "mandatory": ["command", "option"], "optional": ["any"] }
                             },
-                            {
-                            "type": "basic",
-                            "from": { "key_code": "f14" },   
-                            "to": [ { "key_code": "launchpad" } ],
-                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
-                            },
-                            {
-                            "type": "basic",
-                            "from": { "key_code": "f15" },   
-                            "to": [ { "shell_command": "osascript -e 'tell application \"Finder\" to make new Finder window'" } ],
-                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
-                            },
-                            {
-                            "type": "basic",
-                            "from": { "key_code": "f16" },   
-                            "to": [ { "shell_command": "open -a Terminal" } ],
-                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
-                            },
-                            {
-                            "type": "basic",
-                            "from": { "key_code": "f17" },   
-                            "to": [ { "key_code": "spacebar", "modifiers": ["left_command"] } ],   
-                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            "to": [ { "key_code": "n", "modifiers": ["left_command", "left_option"] } ],
+                            "conditions": [
+                                { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] }
+                            ]
                             }
                         ]
                         },
@@ -117,6 +98,22 @@
                             "from": { "key_code": "print_screen" },
                             "to": [ { "key_code": "5", "modifiers": ["left_command", "left_shift"] } ],
                             "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            }
+                        ]
+                        },
+                        {
+                        "description": "Normalize ⌃⌘F on Razer (always send clean Control+Command+F)",
+                        "manipulators": [
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f",
+                                "modifiers": { "mandatory": ["command", "control"], "optional": ["any"] }
+                            },
+                            "to": [ { "key_code": "f", "modifiers": ["left_command", "left_control"] } ],
+                            "conditions": [
+                                { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] }
+                            ]
                             }
                         ]
                         }
