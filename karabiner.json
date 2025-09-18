@@ -1,0 +1,136 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Swap Alt ⌥ with Command ⌘ on Razer BlackWidow Chroma",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 515,
+                                                "vendor_id": 5426
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": { "key_code": "left_option" },
+                                "to": [{ "key_code": "left_command" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 515,
+                                                "vendor_id": 5426
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "key_code": "left_option" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 515,
+                                                "vendor_id": 5426
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": { "key_code": "right_option" },
+                                "to": [{ "key_code": "right_command" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 515,
+                                                "vendor_id": 5426
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": { "key_code": "right_command" },
+                                "to": [{ "key_code": "right_option" }],
+                                "type": "basic"
+                            }
+                        ]
+
+                        
+                    },
+                    {
+                        "description": "Razer M1–M5 actions (BlackWidow Chroma)",
+                        "manipulators": [
+                            {
+                            "type": "basic",
+                            "from": { "key_code": "f13" },   
+                            "to": [ { "key_code": "mission_control" } ],
+                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": { "key_code": "f14" },   
+                            "to": [ { "key_code": "launchpad" } ],
+                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": { "key_code": "f15" },   
+                            "to": [ { "shell_command": "osascript -e 'tell application \"Finder\" to make new Finder window'" } ],
+                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": { "key_code": "f16" },   
+                            "to": [ { "shell_command": "open -a Terminal" } ],
+                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": { "key_code": "f17" },   
+                            "to": [ { "key_code": "spacebar", "modifiers": ["left_command"] } ],   
+                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            }
+                        ]
+                        },
+                        {
+                        "description": "Razer PrintScreen → Screenshot toolbar (⌘⇧5)",
+                        "manipulators": [
+                            {
+                            "type": "basic",
+                            "from": { "key_code": "print_screen" },
+                            "to": [ { "key_code": "5", "modifiers": ["left_command", "left_shift"] } ],
+                            "conditions": [ { "type": "device_if", "identifiers": [ { "vendor_id": 5426, "product_id": 515 } ] } ]
+                            }
+                        ]
+                        }
+                    
+                ]
+            },
+            
+            "name": "Razer Mac Layout",
+            "selected": true,
+            "virtual_hid_keyboard": {
+                "caps_lock_delay_milliseconds": 0,
+                "keyboard_type": "ansi",
+                "keyboard_type_v2": "ansi"
+            }
+        }
+    ]
+}
